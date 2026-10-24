@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate & Save Lives | Jeev Daya Animal Rescue Trust</title>
+  <meta name="description" content="Support emergency animal rescue operations, surgeries, medication, and animal shelter care. All donations are 80G tax-exempt.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Emergency Ticker -->
+  <div class="emergency-topbar">
+    <div class="container emergency-topbar-content">
+      <div class="emergency-topbar-left">
+        <span class="pulse-badge"><i class="fa-solid fa-heart"></i> Give Life</span>
+        <span>100% of your donation goes directly towards emergency medicine and food. Helpline: <strong>+91 98765 43210</strong></span>
+      </div>
+      <div>
+        <a href="rescue-cases.html">View Animals Under Treatment &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-paw"></i></div>
+        <div>
+          Jeev<span>Daya</span>
+          <small>Every Life Deserves Care</small>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="report-rescue.html">Report Rescue</a>
+        <a href="rescue-cases.html">Rescue Cases</a>
+        <a href="find-help.html">Find Help</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="donate.html" class="active">Donate</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="report-rescue.html" class="emergency-btn">
+          <i class="fa-solid fa-truck-medical"></i>
+          <span>Report Rescue</span>
+        </a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="report-rescue.html"><i class="fa-solid fa-truck-medical"></i> Report Rescue</a>
+      <a href="rescue-cases.html"><i class="fa-solid fa-paw"></i> Rescue Cases</a>
+      <a href="find-help.html"><i class="fa-solid fa-hospital"></i> Find Help (Vets)</a>
+      <a href="volunteer.html"><i class="fa-solid fa-handshake-angle"></i> Volunteer</a>
+      <a href="donate.html" class="active"><i class="fa-solid fa-heart"></i> Donate</a>
+      <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact</a>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section style="background: radial-gradient(circle at 10% 20%, rgba(254, 226, 226, 0.45) 0%, rgba(248, 250, 252, 0.95) 70%); padding: 3.5rem 0 2rem;">
+    <div class="container text-center" style="max-width: 750px; margin: 0 auto; text-align: center;">
+      <span class="section-tag tag-danger">Transparent Giving</span>
+      <h1 class="section-title">Support Emergency Animal Rescue</h1>
+      <p class="section-desc">
+        Your generosity buys life-saving surgical kits, feeds abandoned puppies, and keeps our emergency ambulances running 24x7.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Donation Section -->
+  <section style="padding: 1.5rem 0 5rem;">
+    <div class="container">
+      
+      <!-- Notice if user is funding a specific case -->
+      <div id="prefilled-case-notice" style="display: none; background: #fee2e2; border: 1.5px solid #dc2626; color: #991b1b; padding: 1rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; font-size: 0.95rem;">
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 2.5rem; align-items: start;">
+        
+        <!-- Donation Form -->
+        <div class="form-card">
+          <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-hand-holding-heart" style="color: var(--accent-red);"></i> Choose Your Contribution
+          </h2>
+
+          <form id="donation-form">
+            <!-- Preset Amount Tiers -->
+            <label class="form-label">Select Amount (INR)</label>
+            <div class="donation-tiers">
+              <div class="tier-btn" data-amount="500">
+                ₹500
+                <span>Food & Milk</span>
+              </div>
+              <div class="tier-btn active" data-amount="1000">
+                ₹1,000
+                <span>Wound Dressing</span>
+              </div>
+              <div class="tier-btn" data-amount="2500">
+                ₹2,500
+                <span>Surgery & Meds</span>
+              </div>
+              <div class="tier-btn" data-amount="5000">
+                ₹5,000
+                <span>Ambulance Fuel</span>
+              </div>
+            </div>
+
+            <!-- Custom Amount -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="custom-amount" class="form-label">Or Enter Custom Amount (₹)</label>
+              <input type="number" id="custom-amount" class="form-control" placeholder="E.g., 1500" min="50">
+            </div>
+
+            <!-- Purpose of Donation -->
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="donation-cause" class="form-label">Direct My Donation Towards</label>
+              <select id="donation-cause" class="form-control">
+                <option value="General Emergency Fund">General Emergency Animal Rescue Fund</option>
+                <option value="Hit & Run Surgeries">Trauma & Orthopedic Surgery Center</option>
+                <option value="Avian Wing Center">Bird & Wildlife Emergency Ward</option>
+                <option value="Stray Feeding">Stray Dog & Cow Daily Feeding Drive</option>
+                <option value="Winter Shelter">Reflective Collars & Winter Blankets</option>
+              </select>
+            </div>
+
+            <!-- Donor Personal Details -->
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="donor-name" class="form-label">Donor Full Name <span class="req">*</span></label>
+                <input type="text" id="donor-name" class="form-control" placeholder="E.g., Priya Patel" required>
+              </div>
+
+              <div class="form-group">
+                <label for="donor-email" class="form-label">Email (For 80G Receipt) <span class="req">*</span></label>
+                <input type="email" id="donor-email" class="form-control" placeholder="priya@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="donor-phone" class="form-label">Phone Number</label>
+                <input type="tel" id="donor-phone" class="form-control" placeholder="+91 98765 XXXXX">
+              </div>
+
+              <div class="form-group">
+                <label for="donor-pan" class="form-label">PAN Number <small style="font-weight: normal; color: var(--text-light);">(For Tax Exemption)</small></label>
+                <input type="text" id="donor-pan" class="form-control" placeholder="ABCDE1234F" maxlength="10" style="text-transform: uppercase;">
+              </div>
+            </div>
+
+            <!-- Payment Simulation Choices -->
+            <div style="margin: 1.5rem 0;">
+              <label class="form-label" style="margin-bottom: 0.6rem;">Payment Option</label>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+                <label style="border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 0.85rem; text-align: center; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; background: var(--bg-body);">
+                  <input type="radio" name="pay-method" value="upi" checked>
+                  <i class="fa-solid fa-qrcode" style="font-size: 1.25rem; color: var(--primary);"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">UPI / QR</span>
+                </label>
+                <label style="border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 0.85rem; text-align: center; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; background: var(--bg-body);">
+                  <input type="radio" name="pay-method" value="card">
+                  <i class="fa-solid fa-credit-card" style="font-size: 1.25rem; color: var(--accent-blue);"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">Cards</span>
+                </label>
+                <label style="border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 0.85rem; text-align: center; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; background: var(--bg-body);">
+                  <input type="radio" name="pay-method" value="netbanking">
+                  <i class="fa-solid fa-building-columns" style="font-size: 1.25rem; color: var(--accent-orange);"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">NetBanking</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-danger btn-lg btn-block" id="donate-submit-btn">
+              <i class="fa-solid fa-shield-heart"></i> Complete Donation & Get Receipt
+            </button>
+          </form>
+        </div>
+
+        <!-- Impact Transparency & 80G Tax Exemption -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- Impact Card -->
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.8rem; box-shadow: var(--shadow-sm);">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fa-solid fa-coins" style="color: #f59e0b;"></i> Where Does Your Money Go?
+            </h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">₹</div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.95rem;">₹500 sponsors food & milk</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Nutritious recovery meals for 10 recuperating stray pups or kittens for 3 days.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--accent-blue-light); color: var(--accent-blue); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">₹</div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.95rem;">₹1,000 sponsors wound dressing</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Sterile bandages, antiseptic sprays, and antibiotics for 5 injured animals.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--accent-orange-light); color: var(--accent-orange); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">₹</div>
+                <div>
+                  <strong style="color: var(--text-main); font-size: 0.95rem;">₹2,500 sponsors surgical treatment</strong>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Internal bone pinning, sedation, and post-operative pain relief for an accident victim.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 80G Tax Exemption Card -->
+          <div style="background: linear-gradient(135deg, #15803d, #166534); color: #fff; border-radius: var(--radius-lg); padding: 1.8rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <i class="fa-solid fa-award" style="font-size: 2rem; color: #86efac;"></i>
+              <div>
+                <h4 style="font-size: 1.15rem; font-weight: 700; color: #fff;">80G Tax Exemption</h4>
+                <small style="opacity: 0.9;">Reg. No. AABTJ1234PF20234</small>
+              </div>
+            </div>
+            <p style="font-size: 0.88rem; opacity: 0.92; line-height: 1.6;">
+              All donations made to Jeev Daya Welfare Trust are eligible for 50% tax exemption under Section 80G of the Income Tax Act. Instant digital receipts are generated.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation Receipt Modal -->
+  <div class="modal-overlay" id="donation-receipt-modal">
+    <div class="modal-box" style="max-width: 560px; text-align: left;">
+      <button class="modal-close" id="close-donation-modal" aria-label="Close modal">&times;</button>
+      
+      <div style="text-align: center; margin-bottom: 1.25rem;">
+        <div class="modal-icon-success">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--text-main);">
+          Donation Receipt & Thank You!
+        </h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Your compassion gives innocent animals another chance at life.
+        </p>
+      </div>
+
+      <!-- Simulated Official Receipt -->
+      <div style="background: var(--bg-body); border: 1.5px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; font-size: 0.9rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; margin-bottom: 0.6rem;">
+          <span style="color: var(--text-light);">Receipt No:</span>
+          <strong id="receipt-number" style="color: var(--primary);">JD-REC-000000</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; margin-bottom: 0.6rem;">
+          <span style="color: var(--text-light);">Donor Name:</span>
+          <strong id="receipt-donor-name">Valued Supporter</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; margin-bottom: 0.6rem;">
+          <span style="color: var(--text-light);">Amount Paid:</span>
+          <strong id="receipt-amount" style="color: var(--accent-red); font-size: 1.1rem;">₹1,000</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; margin-bottom: 0.6rem;">
+          <span style="color: var(--text-light);">Date:</span>
+          <span id="receipt-date">Today</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span style="color: var(--text-light);">Tax Benefit:</span>
+          <span style="color: var(--primary); font-weight: 600;">Eligible for 80G deduction</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem;">
+        <button type="button" class="btn btn-outline" style="flex: 1;" onclick="window.print()">
+          <i class="fa-solid fa-print"></i> Print Receipt
+        </button>
+        <a href="rescue-cases.html" class="btn btn-primary" style="flex: 1;">
+          <i class="fa-solid fa-paw"></i> See Cases Supported
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon"><i class="fa-solid fa-paw"></i></div>
+            <div><span style="color: #fff;">Jeev</span><span style="color: #22c55e;">Daya</span></div>
+          </div>
+          <p>Every rupee makes an immediate, tangible difference in saving an animal on our streets.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="report-rescue.html">Report Rescue</a>
+            <a href="rescue-cases.html">Rescue Cases</a>
+            <a href="find-help.html">Find Help</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="volunteer.html">Volunteer</a>
+            <a href="donate.html">Donate</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Accounts Desk</h4>
+          <p>Email: accounts@jeevdaya.org</p>
+          <p>Helpline: <strong style="color: #fff;">+91 98765 43210</strong></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Jeev Daya Initiative. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rescue Cases | Jeev Daya Active Animal Treatments</title>
+  <meta name="description" content="View animals currently undergoing medical care, surgery, and rehabilitation at Jeev Daya partner clinics.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Emergency Ticker -->
+  <div class="emergency-topbar">
+    <div class="container emergency-topbar-content">
+      <div class="emergency-topbar-left">
+        <span class="pulse-badge"><i class="fa-solid fa-heart-pulse"></i> Live Cases</span>
+        <span>Every case tracked transparently from rescue to recovery. 24x7 Helpline: <strong>+91 98765 43210</strong></span>
+      </div>
+      <div>
+        <a href="report-rescue.html">Report An Animal &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-paw"></i></div>
+        <div>
+          Jeev<span>Daya</span>
+          <small>Every Life Deserves Care</small>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="report-rescue.html">Report Rescue</a>
+        <a href="rescue-cases.html" class="active">Rescue Cases</a>
+        <a href="find-help.html">Find Help</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="donate.html">Donate</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="report-rescue.html" class="emergency-btn">
+          <i class="fa-solid fa-truck-medical"></i>
+          <span>Report Rescue</span>
+        </a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="report-rescue.html"><i class="fa-solid fa-truck-medical"></i> Report Rescue</a>
+      <a href="rescue-cases.html" class="active"><i class="fa-solid fa-paw"></i> Rescue Cases</a>
+      <a href="find-help.html"><i class="fa-solid fa-hospital"></i> Find Help (Vets)</a>
+      <a href="volunteer.html"><i class="fa-solid fa-handshake-angle"></i> Volunteer</a>
+      <a href="donate.html"><i class="fa-solid fa-heart"></i> Donate</a>
+      <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact</a>
+    </div>
+  </header>
+
+  <!-- Page Heading Banner -->
+  <section style="background: radial-gradient(circle at 10% 20%, rgba(220, 252, 231, 0.45) 0%, rgba(248, 250, 252, 0.95) 70%); padding: 3.5rem 0 2rem;">
+    <div class="container text-center" style="max-width: 750px; margin: 0 auto; text-align: center;">
+      <span class="section-tag">Compassion in Action</span>
+      <h1 class="section-title">Animals Currently Needing Help</h1>
+      <p class="section-desc">
+        Real-time transparency on every rescue. Track their treatment progress, see their medical needs, or sponsor their surgery and recovery supplies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Directory Section -->
+  <section style="padding: 1rem 0 5rem;">
+    <div class="container">
+      
+      <!-- Filter Toolbar -->
+      <div class="filter-toolbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="case-search-input" placeholder="Search by case ID, animal, city, or injury...">
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Cases</button>
+            <button class="filter-btn" data-filter="critical"><i class="fa-solid fa-circle" style="color: var(--accent-red); font-size: 0.65rem;"></i> Critical Care</button>
+            <button class="filter-btn" data-filter="treatment"><i class="fa-solid fa-circle" style="color: var(--accent-orange); font-size: 0.65rem;"></i> In Treatment</button>
+            <button class="filter-btn" data-filter="recovered"><i class="fa-solid fa-circle" style="color: var(--primary); font-size: 0.65rem;"></i> Ready For Home</button>
+          </div>
+
+          <div>
+            <select id="species-filter-select" class="form-control" style="padding: 0.45rem 0.8rem; font-size: 0.85rem; border-radius: var(--radius-full); cursor: pointer;">
+              <option value="all">All Species</option>
+              <option value="Dog">Dogs</option>
+              <option value="Cat">Cats</option>
+              <option value="Cattle">Cattle / Cows</option>
+              <option value="Bird">Birds</option>
+              <option value="Wildlife">Wildlife</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cases Grid (Populated dynamically) -->
+      <div class="cases-grid" id="cases-grid-container">
+        <!-- Rendered via js/main.js -->
+      </div>
+
+      <!-- Callout to Report an Animal -->
+      <div style="margin-top: 4rem; background: #ffffff; border: 2px dashed var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center;">
+        <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem;">Know an Animal That Needs Rescue?</h3>
+        <p style="color: var(--text-muted); max-width: 580px; margin: 0 auto 1.5rem;">
+          Don't wait. Use our instant SOS reporting form to dispatch our nearest rescue vehicle.
+        </p>
+        <a href="report-rescue.html" class="btn btn-danger btn-lg">
+          <i class="fa-solid fa-truck-medical"></i> Report a New Rescue Case
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon"><i class="fa-solid fa-paw"></i></div>
+            <div><span style="color: #fff;">Jeev</span><span style="color: #22c55e;">Daya</span></div>
+          </div>
+          <p>Every life deserves compassion, medical treatment, and a second chance.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="report-rescue.html">Report Rescue</a>
+            <a href="rescue-cases.html">Rescue Cases</a>
+            <a href="find-help.html">Find Help</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <div class="footer-links">
+            <a href="volunteer.html">Volunteer</a>
+            <a href="donate.html">Donate</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Helpline</h4>
+          <p>24x7 Rescue: <strong style="color: #fff;">+91 98765 43210</strong></p>
+          <p>Email: cases@jeevdaya.org</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Jeev Daya Initiative. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

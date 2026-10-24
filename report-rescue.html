@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report an Injured Animal | Jeev Daya Emergency Rescue</title>
+  <meta name="description" content="Report an injured, stranded, or sick animal in emergency need. Rapid ambulance and volunteer response dispatched immediately.">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Emergency Ticker -->
+  <div class="emergency-topbar">
+    <div class="container emergency-topbar-content">
+      <div class="emergency-topbar-left">
+        <span class="pulse-badge"><i class="fa-solid fa-truck-medical"></i> SOS Report</span>
+        <span>Every minute counts! Fill out this form or call <strong>+91 98765 43210</strong></span>
+      </div>
+      <div>
+        <a href="tel:+919876543210"><i class="fa-solid fa-phone"></i> Direct Call Line</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-paw"></i></div>
+        <div>
+          Jeev<span>Daya</span>
+          <small>Every Life Deserves Care</small>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="report-rescue.html" class="active">Report Rescue</a>
+        <a href="rescue-cases.html">Rescue Cases</a>
+        <a href="find-help.html">Find Help</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="donate.html">Donate</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="tel:+919876543210" class="btn btn-outline-danger" style="font-size: 0.85rem; padding: 0.5rem 0.9rem;">
+          <i class="fa-solid fa-phone"></i> Hotline
+        </a>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="report-rescue.html" class="active"><i class="fa-solid fa-truck-medical"></i> Report Rescue</a>
+      <a href="rescue-cases.html"><i class="fa-solid fa-paw"></i> Rescue Cases</a>
+      <a href="find-help.html"><i class="fa-solid fa-hospital"></i> Find Help (Vets)</a>
+      <a href="volunteer.html"><i class="fa-solid fa-handshake-angle"></i> Volunteer</a>
+      <a href="donate.html"><i class="fa-solid fa-heart"></i> Donate</a>
+      <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a>
+      <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact</a>
+    </div>
+  </header>
+
+  <!-- Page Heading Banner -->
+  <section style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.08), rgba(248, 250, 252, 0.95)); padding: 3rem 0 2rem;">
+    <div class="container text-center" style="max-width: 720px; margin: 0 auto; text-align: center;">
+      <span class="section-tag tag-danger">Emergency Animal Dispatch</span>
+      <h1 class="section-title">Report an Injured or Distressed Animal</h1>
+      <p class="section-desc">
+        Please provide accurate location details and photos so our nearest rescue vehicle and volunteers can arrive without delay.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Report Form Section -->
+  <section style="padding: 2rem 0 5rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 2.5rem; align-items: start;">
+        
+        <!-- The Rescue Report Form -->
+        <div class="form-card">
+          <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-clipboard-check" style="color: var(--primary);"></i> Rescue Report Details
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">
+            Fields marked with an asterisk (<span class="req">*</span>) are required.
+          </p>
+
+          <form id="rescue-report-form">
+            <div class="form-grid">
+              
+              <!-- Animal Species -->
+              <div class="form-group">
+                <label for="animal-type" class="form-label">Animal Type <span class="req">*</span></label>
+                <select id="animal-type" class="form-control" required>
+                  <option value="" disabled selected>Select species...</option>
+                  <option value="Dog">Dog (Canine)</option>
+                  <option value="Cat">Cat (Feline)</option>
+                  <option value="Cattle">Cow / Bull / Calf</option>
+                  <option value="Bird">Pigeon / Bird / Raptor</option>
+                  <option value="Wildlife">Monkey / Squirrel / Wildlife</option>
+                  <option value="Other">Other Animal</option>
+                </select>
+              </div>
+
+              <!-- Urgency / Condition -->
+              <div class="form-group">
+                <label for="severity-level" class="form-label">Condition & Urgency <span class="req">*</span></label>
+                <select id="severity-level" class="form-control" required>
+                  <option value="" disabled selected>Select severity...</option>
+                  <option value="critical">Critical: Road Accident / Heavy Bleeding / Unconscious</option>
+                  <option value="severe">Severe: Bone Fracture / Severe Mange / Open Wound</option>
+                  <option value="moderate">Moderate: High Fever / Limping / Severe Dehydration</option>
+                  <option value="shelter">Abandoned / Motherless Newborn Puppies or Kittens</option>
+                </select>
+              </div>
+
+              <!-- City Selection -->
+              <div class="form-group">
+                <label for="city-select" class="form-label">City / Region <span class="req">*</span></label>
+                <select id="city-select" class="form-control" required>
+                  <option value="Ahmedabad" selected>Ahmedabad</option>
+                  <option value="Gandhinagar">Gandhinagar</option>
+                  <option value="Vadodara">Vadodara</option>
+                  <option value="Surat">Surat</option>
+                  <option value="Rajkot">Rajkot</option>
+                  <option value="Other">Other Area</option>
+                </select>
+              </div>
+
+              <!-- Location & GPS Button -->
+              <div class="form-group">
+                <label for="animal-location" class="form-label">Exact Location / Landmark <span class="req">*</span></label>
+                <div class="input-with-button">
+                  <input type="text" id="animal-location" class="form-control" placeholder="E.g., Near City Mall, Opp. Metro Pillar 142" required>
+                  <button type="button" id="detect-gps-btn" class="btn btn-outline" style="white-space: nowrap; font-size: 0.85rem;" title="Auto-detect current GPS coordinates">
+                    <i class="fa-solid fa-location-crosshairs"></i> Use GPS
+                  </button>
+                </div>
+              </div>
+
+              <!-- Reporter Contact Details -->
+              <div class="form-group">
+                <label for="reporter-name" class="form-label">Your Name</label>
+                <input type="text" id="reporter-name" class="form-control" placeholder="E.g., Rahul Sharma">
+              </div>
+
+              <div class="form-group">
+                <label for="reporter-phone" class="form-label">Your Phone Number <span class="req">*</span></label>
+                <input type="tel" id="reporter-phone" class="form-control" placeholder="E.g., +91 98765 43210" pattern="[0-9+\s-]{10,14}" required>
+                <small style="color: var(--text-light); font-size: 0.75rem;">Rescuer will call this number if they cannot locate the animal.</small>
+              </div>
+
+              <!-- Photo Upload with Preview -->
+              <div class="form-group col-span-2">
+                <label class="form-label">Photo of the Animal (Recommended)</label>
+                <div class="upload-area" onclick="document.getElementById('animal-photo').click()">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <p style="font-weight: 600; color: var(--text-main); margin-bottom: 0.2rem;">Click to upload or take a photo</p>
+                  <p style="font-size: 0.8rem; color: var(--text-light);">PNG, JPG or WEBP (Max 5MB)</p>
+                  <input type="file" id="animal-photo" accept="image/*" style="display: none;">
+                </div>
+                <div id="upload-preview" class="upload-preview">
+                  <img id="preview-img" src="" alt="Selected animal photo preview">
+                  <button type="button" id="remove-img-btn" class="remove-img-btn" title="Remove photo">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Additional Medical Notes -->
+              <div class="form-group col-span-2">
+                <label for="case-details" class="form-label">Detailed Notes / Behavior / Surroundings</label>
+                <textarea id="case-details" class="form-control" placeholder="E.g., The dog is unable to move its hind legs, sheltering under a tea stall. Aggressive when touched."></textarea>
+              </div>
+
+            </div>
+
+            <!-- Submit Button -->
+            <div style="margin-top: 2rem;">
+              <button type="submit" class="btn btn-danger btn-lg btn-block" id="submit-rescue-btn">
+                <i class="fa-solid fa-truck-medical"></i> Dispatch Rescue Team Now
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar Guidelines & Emergency Tips -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- Immediate Care Tips -->
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.8rem; box-shadow: var(--shadow-sm);">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent-orange); display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fa-solid fa-triangle-exclamation"></i> While You Wait For The Rescuer
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.9rem; color: var(--text-muted);">
+              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
+                <i class="fa-solid fa-shield" style="color: var(--primary); margin-top: 0.25rem;"></i>
+                <span><strong>Stay at a Safe Distance:</strong> In pain, animals may bite or scratch out of fear.</span>
+              </li>
+              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
+                <i class="fa-solid fa-ban" style="color: var(--accent-red); margin-top: 0.25rem;"></i>
+                <span><strong>Do NOT Feed Milk or Solid Food:</strong> Feeding an injured or unconscious animal can cause fatal choking. Clean water in a shallow bowl is fine.</span>
+              </li>
+              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
+                <i class="fa-solid fa-umbrella" style="color: var(--accent-blue); margin-top: 0.25rem;"></i>
+                <span><strong>Provide Shade or Shelter:</strong> If on hot asphalt or under rain, place a cardboard shield or umbrella over them.</span>
+              </li>
+              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
+                <i class="fa-solid fa-eye" style="color: var(--primary); margin-top: 0.25rem;"></i>
+                <span><strong>Keep an Eye on Them:</strong> Frightened animals may try to drag themselves into traffic or hiding spots.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Direct Phone Card -->
+          <div style="background: linear-gradient(135deg, #1e293b, #0f172a); color: #fff; border-radius: var(--radius-lg); padding: 1.8rem; text-align: center;">
+            <i class="fa-solid fa-headset" style="font-size: 2.5rem; color: #ef4444; margin-bottom: 1rem;"></i>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Need Instant Phone Assistance?</h3>
+            <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1.25rem;">
+              Our trained emergency dispatchers are available 24 hours a day, 7 days a week.
+            </p>
+            <a href="tel:+919876543210" class="btn btn-danger btn-block">
+              <i class="fa-solid fa-phone"></i> Call +91 98765 43210
+            </a>
+          </div>
+
+          <!-- Live Cases Link -->
+          <div style="background: var(--primary-light); border: 1px solid rgba(21, 128, 61, 0.2); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center;">
+            <p style="font-weight: 600; color: var(--primary-hover); margin-bottom: 0.5rem;">Want to see previous reports?</p>
+            <a href="rescue-cases.html" style="font-size: 0.9rem; color: var(--primary); font-weight: 700; text-decoration: underline;">
+              View Active Rescue Cases Directory &rarr;
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal-overlay" id="rescue-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="close-rescue-modal" aria-label="Close modal">&times;</button>
+      <div class="modal-icon-success">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">
+        Rescue Report Dispatched!
+      </h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+        Your report has been broadcast to the nearest emergency ambulance and rescue volunteers.
+      </p>
+
+      <div style="background: var(--bg-body); border: 1.5px dashed var(--primary); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem;">
+        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); font-weight: 700;">Rescue Ticket Reference</span>
+        <div id="modal-ticket-id" style="font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: 1px; margin-top: 0.25rem;">
+          #JD-0000
+        </div>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.75rem;">
+        Please keep your phone (<strong id="modal-reporter-phone">+91 XXXXX XXXXX</strong>) handy. Our ambulance driver may call for landmark verification.
+      </p>
+
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="rescue-cases.html" class="btn btn-primary btn-block">
+          <i class="fa-solid fa-paw"></i> View in Rescue Cases
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon"><i class="fa-solid fa-paw"></i></div>
+            <div><span style="color: #fff;">Jeev</span><span style="color: #22c55e;">Daya</span></div>
+          </div>
+          <p>Protecting every life on the streets with rapid emergency response and medical care.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="report-rescue.html">Report Rescue</a>
+            <a href="rescue-cases.html">Rescue Cases</a>
+            <a href="find-help.html">Find Help</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <div class="footer-links">
+            <a href="volunteer.html">Volunteer</a>
+            <a href="donate.html">Donate</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Emergency Dispatch</h4>
+          <p>24x7 Ambulance: <strong style="color: #fff;">+91 98765 43210</strong></p>
+          <p>Email: rescue@jeevdaya.org</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Jeev Daya Initiative. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
